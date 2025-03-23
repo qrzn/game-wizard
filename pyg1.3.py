@@ -143,14 +143,17 @@ def launch_game(game):
     clear_screen()
     play_sound('ui_hacking_charscroll.wav')
     print_header()
-    print_with_delay(TEXT_BOLD + TEXT_COLOR_MAGENTA + "Launching {}...\n".format(game) + TEXT_RESET)
+    print_with_delay(TEXT_BOLD + TEXT_COLOR_MAGENTA + "=" * 50 + "\n\n"+ TEXT_RESET)
+    print_with_delay(TEXT_BOLD + TEXT_COLOR_MAGENTA + " -> Launching {}...\n\n".format(game) + TEXT_RESET)
+    print_with_delay(TEXT_BOLD + TEXT_COLOR_MAGENTA + " -> Have fun! :-)\n\n".format(game) + TEXT_RESET)
+    print_with_delay(TEXT_BOLD + TEXT_COLOR_MAGENTA + "=" * 50 + "\n\n"+ TEXT_RESET)
     if game in game_commands:
         command = game_commands[game]
         os.system(command)
         clear_screen()
         print_header()
         play_sound('ui_hacking_charscroll.wav')
-        print_with_delay("I hope you had fun playing {}!\n".format(game))
+        print_with_delay(TEXT_BOLD + TEXT_COLOR_YELLOW +"I hope you had fun playing {}!\n".format(game) + TEXT_RESET)
     else:
         clear_screen()
         print_header()
